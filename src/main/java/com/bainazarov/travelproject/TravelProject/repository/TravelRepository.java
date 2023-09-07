@@ -11,9 +11,7 @@ import java.util.List;
 public interface TravelRepository {
 
     void addTravel(Travel travel);
-
     List<ClientDto> getAllClients();
-
     TravelAggregate getAggregatesByClientId(Long clientId);
     List<Travel> getAllTravels();
     void upsertAggregate(TravelAggregate aggregate);
