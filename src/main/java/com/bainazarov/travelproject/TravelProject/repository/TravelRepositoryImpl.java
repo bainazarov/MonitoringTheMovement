@@ -59,9 +59,18 @@ public class TravelRepositoryImpl implements TravelRepository {
                 "cnt_all_trans_car, cnt_all_trans_bus, cnt_all_trans_plane, cnt_all_trans_train) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
                 "ON CONFLICT (client_id) DO UPDATE SET " +
-                "cnt_all_trans, cnt_all_trans_1year, cnt_all_trans_5years, cnt_all_trans_before18yo, cnt_all_trans_after18yo" +
-                "max_cnt_of_days_in_same_place, min_cnt_of_days_in_same_place, avg_cnt_of_days_in_same_place" +
-                "cnt_all_trans_car, cnt_all_trans_bus, cnt_all_trans_plane, cnt_all_trans_train";
+                "cnt_all_trans = excluded.cnt_all_trans, " +
+                "cnt_all_trans_1year = excluded.cnt_all_trans_1year, " +
+                "cnt_all_trans_5years = excluded.cnt_all_trans_5years, " +
+                "cnt_all_trans_before18yo = excluded.cnt_all_trans_before18yo, " +
+                "cnt_all_trans_after18yo = excluded.cnt_all_trans_after18yo, " +
+                "max_cnt_of_days_in_same_place = excluded.max_cnt_of_days_in_same_place, " +
+                "min_cnt_of_days_in_same_place = excluded.min_cnt_of_days_in_same_place, " +
+                "avg_cnt_of_days_in_same_place = excluded.avg_cnt_of_days_in_same_place, " +
+                "cnt_all_trans_car = excluded.cnt_all_trans_car, " +
+                "cnt_all_trans_bus = excluded.cnt_all_trans_bus, " +
+                "cnt_all_trans_plane = excluded.cnt_all_trans_plane, " +
+                "cnt_all_trans_train = excluded.cnt_all_trans_train";
 
         jdbcTemplate.update(sql, aggregate.getClient_id(), aggregate.getCnt_all_trans(), aggregate.getCnt_all_trans_1year(),
                 aggregate.getCnt_all_trans_5years(), aggregate.getCnt_all_trans_before18yo(), aggregate.getCnt_all_trans_after18yo(),
