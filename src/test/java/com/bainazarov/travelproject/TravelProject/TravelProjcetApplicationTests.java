@@ -1,4 +1,4 @@
-package com.bainazarov.travelproject.TravelProjcet;
+package com.bainazarov.travelproject.TravelProject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

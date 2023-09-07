@@ -1,4 +1,4 @@
-package com.bainazarov.travelproject.TravelProjcet.dto;
+package com.bainazarov.travelproject.TravelProject.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

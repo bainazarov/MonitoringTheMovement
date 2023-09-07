@@ -1,9 +1,9 @@
-package com.bainazarov.travelproject.TravelProjcet.controller;
+package com.bainazarov.travelproject.TravelProject.controller;
 
-import com.bainazarov.travelproject.TravelProjcet.dto.ClientDto;
-import com.bainazarov.travelproject.TravelProjcet.entity.Travel;
-import com.bainazarov.travelproject.TravelProjcet.entity.TravelAggregate;
-import com.bainazarov.travelproject.TravelProjcet.service.TravelService;
+import com.bainazarov.travelproject.TravelProject.dto.ClientDto;
+import com.bainazarov.travelproject.TravelProject.entity.Travel;
+import com.bainazarov.travelproject.TravelProject.entity.TravelAggregate;
+import com.bainazarov.travelproject.TravelProject.service.TravelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +29,17 @@ public class TravelController {
         return travelService.getAllClients();
     }
 
-    // TODO
+    @PostMapping("/calculate-aggregates")
+    public void calculateAggregatesForAllClients() {
+        long startTime = System.currentTimeMillis();
+
+        travelService.calculateAggregatesForAllClients();
+
+        long endTime = System.currentTimeMillis();
+
+        long result = endTime - startTime;
+        System.out.println("Время выполнения: " + result + " миллисекунд");
+    }
 
     @GetMapping("/{clientId}")
     public TravelAggregate getAggregatesByClientId(@PathVariable("clientId") Long clientId) {

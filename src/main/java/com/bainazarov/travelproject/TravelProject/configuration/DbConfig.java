@@ -1,4 +1,4 @@
-package com.bainazarov.travelproject.TravelProjcet.configuration;
+package com.bainazarov.travelproject.TravelProject.configuration;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;

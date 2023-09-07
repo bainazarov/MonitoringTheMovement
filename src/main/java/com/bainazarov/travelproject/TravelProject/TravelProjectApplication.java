@@ -1,13 +1,13 @@
-package com.bainazarov.travelproject.TravelProjcet;
+package com.bainazarov.travelproject.TravelProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TravelProjcetApplication {
+public class TravelProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TravelProjcetApplication.class, args);
+		SpringApplication.run(TravelProjectApplication.class, args);
 
 	}
 }
