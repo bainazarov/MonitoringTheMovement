@@ -1,11 +1,13 @@
 package com.bainazarov.travelproject.TravelProject.entity;
-
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+
+@Builder
 @AllArgsConstructor
+@Data
 @NoArgsConstructor
 public class TravelAggregate {
 
