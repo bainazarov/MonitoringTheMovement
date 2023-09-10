@@ -10,34 +10,21 @@ import java.util.List;
 
 public class CalculateAggregateForClient {
     public static TravelAggregate calculateAggregateForClient(List<Travel> travels) {
-        long clientId = getFirstClientId(travels);
-        int cntAllTrans = getCntAllTrans(travels);
-        int cntAllTrans1year = getCntAllTrans1year(travels);
-        int cntAllTrans5years = getCntAllTrans5years(travels);
-        int cntAllTransBefore18yo = getCntAllTransBefore18yo(travels);
-        int cntAllTransAfter18yo = getCntAllTransAfter18yo(travels);
-        int maxCntOfDaysInSamePlace = getMaxCntOfDaysInSamePlace(travels);
-        int minCntOfDaysInSamePlace = getMinCntOfDaysInSamePlace(travels);
-        double avgCntOfDaysInSamePlace = getAvgCntOfDaysInSamePlace(travels);
-        int cntAllTransCar = getCntAllTransCar(travels);
-        int cntAllTransBus = getCntAllTransBus(travels);
-        int cntAllTransPlane = getCntAllTransPlane(travels);
-        int cntAllTransTrain = getCntAllTransTrain(travels);
 
         return TravelAggregate.builder()
-                .client_id(clientId)
-                .cnt_all_trans(cntAllTrans)
-                .cnt_all_trans_1year(cntAllTrans1year)
-                .cnt_all_trans_5years(cntAllTrans5years)
-                .cnt_all_trans_before18yo(cntAllTransBefore18yo)
-                .cnt_all_trans_after18yo(cntAllTransAfter18yo)
-                .max_cnt_of_days_in_same_place(maxCntOfDaysInSamePlace)
-                .min_cnt_of_days_in_same_place(minCntOfDaysInSamePlace)
-                .avg_cnt_of_days_in_same_place(avgCntOfDaysInSamePlace)
-                .cnt_all_trans_car(cntAllTransCar)
-                .cnt_all_trans_bus(cntAllTransBus)
-                .cnt_all_trans_plane(cntAllTransPlane)
-                .cnt_all_trans_train(cntAllTransTrain)
+                .client_id(getFirstClientId(travels))
+                .cnt_all_trans(getCntAllTrans(travels))
+                .cnt_all_trans_1year(getCntAllTrans1year(travels))
+                .cnt_all_trans_5years(getCntAllTrans5years(travels))
+                .cnt_all_trans_before18yo(getCntAllTransBefore18yo(travels))
+                .cnt_all_trans_after18yo(getCntAllTransAfter18yo(travels))
+                .max_cnt_of_days_in_same_place(getMaxCntOfDaysInSamePlace(travels))
+                .min_cnt_of_days_in_same_place(getMinCntOfDaysInSamePlace(travels))
+                .avg_cnt_of_days_in_same_place(getAvgCntOfDaysInSamePlace(travels))
+                .cnt_all_trans_car(getCntAllTransCar(travels))
+                .cnt_all_trans_bus(getCntAllTransBus(travels))
+                .cnt_all_trans_plane(getCntAllTransPlane(travels))
+                .cnt_all_trans_train(getCntAllTransTrain(travels))
                 .build();
     }
 
